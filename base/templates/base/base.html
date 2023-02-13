@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Local Library</title>{% endblock %}
+</head>
+<body>
+  {% block sidebar %}
+  <nav class="w3-bar w3-black">
+    <a href="{% url 'home_list'  %}" class="w3-button w3-bar-item">Home</a>
+    <a href="{% url 'logout'  %}" class="w3-button w3-bar-item">logout</a>
+    {% endblock %}
+    </nav>
+  {% block content %}<!-- default content text (typically empty) -->{% endblock %}
+</body>
+</html>

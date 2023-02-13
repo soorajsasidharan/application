@@ -1,0 +1,26 @@
+{% extends "base/base.html" %}
+{% block content %}
+<h1>insta</h1>
+
+
+    
+    {% for home in object_list %}
+    
+        {% if home.username != username %}
+            {{home.username}}<br>
+            <img src="{{home.post_image.url}}" /><br>
+            {{home.caption}}<br>
+        {% endif %}
+    
+    {% endfor %}
+
+<div>
+    <p> <a href="{% url 'profile' request.user.id %}">profile</a>   |
+        <a href="{% url 'upload'  %}">upload post</a>   |
+        <a href="{% url 'user_post' request.user %}">user_posts</a>
+    </p>
+
+</div>
+{% endblock content %}
+
+

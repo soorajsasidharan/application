@@ -1,0 +1,11 @@
+{% extends "base/base.html" %}
+{% block content %}
+<h1> 
+    {{profile.user}}<br>
+    <img src="{{profile.profile_image.url}}" ><br>
+    {{profile.bio}}
+</h1>
+<a class="btn btn-primary btn-lg" href="{% url 'update' request.user.id %}" role="button">edit profile</a>
+
+{% endblock content %}
+
